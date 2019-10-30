@@ -1,22 +1,87 @@
-.App {
-  text-align: center;
-}
+* > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
-.App-logo {
-  height: 40vmin;
-}
+html {
+  margin: 0;
+  padding: 0;
+  color: white; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  margin: 0; }
+
+#root {
+  background: #181a1b;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-.App-link {
-  color: #09d3ac;
-}
+.todo-main {
+  width: 30%;
+  margin: auto;
+  background: #1b1d1e;
+  border-radius: 10px;
+  padding: 1%;
+  border: 1px white solid; }
+  .todo-main__title {
+    width: 100%;
+    font-size: 3vw;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 5%; }
+  .todo-main__input-field {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 5%; }
+    .todo-main__input-field .check-all {
+      border: 1px solid white;
+      border-radius: 5px;
+      background-color: transparent;
+      color: white;
+      width: 20%;
+      margin-right: 5%;
+      height: 2.5vw;
+      font-size: 2vw; }
+    .todo-main__input-field .input {
+      width: 75%;
+      height: 2.5vw;
+      font-size: 2vw;
+      padding: 5px 2%;
+      border-radius: 5px;
+      border: none; }
+  .todo-main__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .todo-main__list .check {
+      padding: 5px;
+      width: 20%;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .todo-main__list .text {
+      width: 75%;
+      padding: 5px 2%;
+      font-size: 1.5vw; }
+
+/*# sourceMappingURL=App.css.map */

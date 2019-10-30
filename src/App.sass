@@ -1,0 +1,65 @@
+*>*
+    box-sizing: border-box
+html
+    margin: 0
+    padding: 0
+    color: white
+p
+    margin: 0
+#root
+    background: #181a1b
+    margin: 0
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+.todo-main
+    width: 30%
+    margin: auto
+    background: rgb(27, 29, 30)
+    border-radius: 10px
+    padding: 1%
+    border: 1px white solid
+    &__title
+        width: 100%
+        font-size: 3vw
+        line-height: 1
+        font-weight: bold
+        margin-bottom: 5%
+        
+    &__input-field
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-bottom: 5%
+        .check-all
+            border: 1px solid white
+            border-radius: 5px
+            background-color: transparent
+            color: white
+            width: 20%
+            margin-right: 5%
+            height: 2.5vw
+            font-size: 2vw
+        .input
+            width: 75%
+            height: 2.5vw
+            font-size: 2vw
+            padding: 5px 2%
+            border-radius: 5px
+            border: none
+    &__list
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .check
+            padding: 5px
+            width: 20%
+            align-items: center
+        .text
+            width: 75%    
+            padding: 5px 2%
+            font-size: 1.5vw
+            
+    
