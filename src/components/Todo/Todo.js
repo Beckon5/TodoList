@@ -1,15 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 
-const Todo=(props)=> {
-    return (
-     
-        <div className="todo-main__list">
-          <input className="check" type="checkbox" checked={props.checked} />
-          <p className="text">{props.text}</p>
-          <button className="close" onClick={props.delete}>X</button>
-        </div>
-      
-    );
-  }
-  
-  export default Todo;
+const Todo = (props) => {
+  const { text, del } = props;
+  const [checked, setChecked] = useState(false)
+  return (
+
+    <div className="todo-main__list">
+
+      <input id="check" className="check" value={checked} type="checkbox" onClick={() => {setChecked(!checked);props.check()}} />
+      <p style={checked ? { textDecoration: "line-through" } : { textDecoration: "none" }} className="text">{text}</p>
+      <button className="close" onClick={del}>X</button>
+    </div>
+
+  );
+}
+
+export default Todo;

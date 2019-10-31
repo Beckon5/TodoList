@@ -14,7 +14,7 @@ p {
   background: #181a1b;
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  padding: 10% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +91,7 @@ p {
       background: none;
       color: white;
       border: none; }
-  .todo-main__list:hover .close {
-    opacity: 1; }
+    .todo-main__list:hover .close {
+      opacity: 1; }
 
 /*# sourceMappingURL=App.css.map */

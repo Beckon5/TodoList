@@ -2,8 +2,8 @@
 import actionType from "./actionType";
 const {
 ADD_TODO,
-TODO_CHECK,
-DELETE_TODO
+DELETE_TODO,
+CHECK_TODO
   } = actionType;
 export const addTodo = (newTodo) => {
 
@@ -12,14 +12,14 @@ export const addTodo = (newTodo) => {
         payload: newTodo
     }
 }
-
-
-export const checkTodo = (checkedTodo) => {
+export const checkTodo = (todoToCheck) => {
     return {
-        type: TODO_CHECK,
-        payload: checkedTodo
+        type: CHECK_TODO,
+        payload: todoToCheck
     }
 }
+
+
 export const deleteTodo = (todoToDel) => {
     return {
         type: DELETE_TODO,
