@@ -10,7 +10,7 @@ const Mark = props => {
       <input
         className="check"
         type="checkbox"
-        checked={toDos[item].checked}
+        checked={checked}
         onChange={() => {
           checkTodo();
           setChecked(toDos[item].checked);
@@ -18,7 +18,7 @@ const Mark = props => {
       />
       <p
         style={
-          toDos[item].checked
+          checked
             ? { textDecoration: "line-through" }
             : { textDecoration: "none" }
         }
