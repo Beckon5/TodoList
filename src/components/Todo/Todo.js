@@ -1,18 +1,37 @@
-import React, { useState } from "react"
-
-const Todo = (props) => {
-  const { text, del } = props;
-  const [checked, setChecked] = useState(false)
-  return (
-
-    <div className="todo-main__list">
-
-      <input id="check" className="check" value={checked} type="checkbox" onClick={() => {setChecked(!checked);props.check()}} />
-      <p style={checked ? { textDecoration: "line-through" } : { textDecoration: "none" }} className="text">{text}</p>
-      <button className="close" onClick={del}>X</button>
-    </div>
-
-  );
+import React from "react"
+import Mark from "./Mark.jsx"
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { deleteTodo, checkTodo } from '../../store/actions'
+const mapStateToProps = (state) => {
+  return {
+    toDos: state.toDos
+  }
 }
 
-export default Todo;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteTodo: bindActionCreators(deleteTodo, dispatch),
+    checkTodo: bindActionCreators(checkTodo, dispatch)
+  }
+};
+const Todo = (props) => {
+  const {checkTodo, deleteTodo, toDos } = props;
+  
+  return(
+    <>
+  {Object.keys(toDos).map((item) => {
+   
+    return (
+      
+      
+    <Mark item={item} toDos={toDos}  key={item} checkTodo={()=>checkTodo(item)} text={toDos[item].text}  deleteTodo={()=>deleteTodo(toDos[item].id)}/>
+
+     
+    )
+  })}
+</>
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todo)
