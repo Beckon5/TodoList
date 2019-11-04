@@ -6,7 +6,16 @@ import { bindActionCreators } from 'redux'
 import { addTodo, checkAll } from './store/actions'
 import Main from './Main.jsx'
 
-const mapStateToProps = (state) => {
+
+  
+const App=(props)=>  {
+  const { toDos, addTodo, checkAll } = props;
+    
+    return <Main toDos={toDos} addTodo={addTodo} checkAll={checkAll}/>
+    
+  }
+
+  const mapStateToProps = (state) => {
     return {
       toDos: state.toDos
     }
@@ -18,15 +27,6 @@ const mapStateToProps = (state) => {
       checkAll: bindActionCreators(checkAll, dispatch)
     }
   };
-  
-const App=(props)=>  {
-  
-    const { toDos, addTodo, checkAll } = props;
-    return <Main toDos={toDos} addTodo={addTodo} checkAll={checkAll}/>
-    
-  }
-
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

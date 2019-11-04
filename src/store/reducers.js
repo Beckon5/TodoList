@@ -21,16 +21,14 @@ export const rootReducer = (state = initialState, action) => {
         case actionType.CHECK_TODO:
 
             return { ...state, ...state.toDos[action.payload].checked === true ? { ...state.toDos[action.payload].checked = false } : { ...state.toDos[action.payload].checked = true } };
-        // return{...state, ...state.toDos.find((item) => { if (item.id == action.payload) item.checked = !item.checked })};
+        
         case actionType.CHECK_ALL: {
             
             return { ...state, ...state.toDos.filter((item)=>{item.checked=true}) };
         }
         case actionType.DELETE_TODO: {
                 return {...state, toDos: [...state.toDos.filter((item)=>item.id!==action.payload)]}
-                
-            // return { ...state, ...state.toDos[action.payload] = null };
-            
+              
         }
 
 

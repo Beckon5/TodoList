@@ -22,14 +22,13 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background: #181a1b; }
 
 .todo-main {
   width: 30%;
-  margin: auto;
   background: #1b1d1e;
   border-radius: 10px;
   padding: 1%;
@@ -48,6 +47,8 @@ p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: 5%; }
     .todo-main__input-field .check-all {
       border: 1px solid white;
@@ -95,5 +96,22 @@ p {
       border: none; }
     .todo-main__list:hover .close {
       opacity: 1; }
+  .todo-main .filter-btns {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 5%; }
+    .todo-main .filter-btns .btn {
+      width: 30%;
+      text-align: center;
+      border: 1px solid white;
+      padding: 5px 0;
+      border-radius: 5px;
+      background: none;
+      color: white; }
 
 /*# sourceMappingURL=App.css.map */
