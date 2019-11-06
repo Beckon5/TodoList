@@ -29,7 +29,7 @@ const Mark = props => {
         {text}
       </p>
       <button className="close" onClick={() => deleteTodo()}>
-        X
+      ×
       </button>
     </div>
   );
