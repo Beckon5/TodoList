@@ -6,7 +6,9 @@ const Mark = props => {
 
   return (
     <div className="todo-main__list">
+      
       <input
+        id={item}
         className="check"
         type="checkbox"
         checked={checked}
@@ -15,6 +17,7 @@ const Mark = props => {
           setChecked(toDos[item].checked);
         }}
       />
+      <label className="check-label" htmlFor={item}>✔</label>
       <p
         style={
           checked
