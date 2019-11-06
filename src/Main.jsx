@@ -6,9 +6,9 @@ const Main = props => {
   const [inputText, setInputText] = useState("");
   const { toDos, addTodo, checkAll } = props;
 
-  const [ onlyActive, setOnlyActive ] = useState(false);
-  const [ onlyUnactive, setOnlyUnactive ] = useState(false);
-  
+  const [onlyActive, setOnlyActive] = useState(false);
+  const [onlyUnactive, setOnlyUnactive] = useState(false);
+
   return (
     <div className="todo-main">
       <p className="todo-main__title">To do list...</p>
@@ -42,14 +42,37 @@ const Main = props => {
             }
           }}
         />
-        
       </div>
-      <Todo onlyActive={onlyActive} onlyUnactive={onlyUnactive}/>
+      <Todo onlyActive={onlyActive} onlyUnactive={onlyUnactive} />
       <div className="filter-btns">
-          <button className="btn" onClick={()=>{setOnlyActive(false); setOnlyUnactive(false)}}>All</button>
-          <button className="btn" onClick={()=>{setOnlyUnactive(false); setOnlyActive(true)}}>Completed</button>
-          <button className="btn" onClick={()=>{setOnlyActive(false); setOnlyUnactive(true);}}>In progress</button>
-        </div>
+        <button
+          className="btn"
+          onClick={() => {
+            setOnlyActive(false);
+            setOnlyUnactive(false);
+          }}
+        >
+          All
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            setOnlyUnactive(false);
+            setOnlyActive(true);
+          }}
+        >
+          Completed
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            setOnlyActive(false);
+            setOnlyUnactive(true);
+          }}
+        >
+          In progress
+        </button>
+      </div>
     </div>
   );
 };

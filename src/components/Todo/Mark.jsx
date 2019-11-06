@@ -1,9 +1,8 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 const Mark = props => {
-  const {toDos, text, checkTodo, deleteTodo, item } = props;
+  const { toDos, text, checkTodo, deleteTodo, item } = props;
   const [checked, setChecked] = useState(toDos[item].checked);
-  
 
   return (
     <div className="todo-main__list">
