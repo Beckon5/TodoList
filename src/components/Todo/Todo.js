@@ -6,15 +6,15 @@ import { bindActionCreators } from "redux";
 import { deleteTodo, checkTodo } from "../../store/actions";
 import PropTypes from "prop-types";
 const Todo = props => {
-  const { onlyActive, onlyUnactive, checkTodo, deleteTodo, toDos } = props;
+  const { onlyActive, onlyInactive, checkTodo, deleteTodo, toDos } = props;
 
   return (
     <>
       {Object.keys(toDos).map(item => {
         if (
           onlyActive & toDos[item].checked ||
-          onlyUnactive & !toDos[item].checked ||
-          !onlyUnactive & !onlyActive
+          onlyInactive & !toDos[item].checked ||
+          !onlyInactive & !onlyActive
         )
           return (
             <Mark
@@ -48,7 +48,7 @@ export default connect(
 
 Todo.propTypes = {
   onlyActive: PropTypes.bool,
-  onlyUnactive: PropTypes.bool,
+  onlyInactive: PropTypes.bool,
   checkTodo: PropTypes.func,
   deleteTodo: PropTypes.func,
   toDos: PropTypes.array

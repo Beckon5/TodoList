@@ -7,7 +7,7 @@ const Main = props => {
   const { toDos, addTodo, checkAll } = props;
 
   const [onlyActive, setOnlyActive] = useState(false);
-  const [onlyUnactive, setOnlyUnactive] = useState(false);
+  const [onlyInactive, setOnlyInactive] = useState(false);
 
   return (
     <div className="todo-main">
@@ -43,13 +43,13 @@ const Main = props => {
           }}
         />
       </div>
-      <Todo onlyActive={onlyActive} onlyUnactive={onlyUnactive} />
+      <Todo onlyActive={onlyActive} onlyInactive={onlyInactive} />
       <div className="filter-btns">
         <button
           className="btn"
           onClick={() => {
             setOnlyActive(false);
-            setOnlyUnactive(false);
+            setOnlyInactive(false);
           }}
         >
           All
@@ -57,7 +57,7 @@ const Main = props => {
         <button
           className="btn"
           onClick={() => {
-            setOnlyUnactive(false);
+            setOnlyInactive(false);
             setOnlyActive(true);
           }}
         >
@@ -67,7 +67,7 @@ const Main = props => {
           className="btn"
           onClick={() => {
             setOnlyActive(false);
-            setOnlyUnactive(true);
+            setOnlyInactive(true);
           }}
         >
           In progress
