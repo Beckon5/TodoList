@@ -6,7 +6,6 @@ const Mark = props => {
 
   return (
     <div className="todo-main__list">
-      
       <input
         id={item}
         className="check"
@@ -17,7 +16,9 @@ const Mark = props => {
           setChecked(toDos[item].checked);
         }}
       />
-      <label className="check-label" htmlFor={item}>✔</label>
+      <label className="check-label" htmlFor={item}>
+        ✔
+      </label>
       <p
         style={
           checked
@@ -29,7 +30,7 @@ const Mark = props => {
         {text}
       </p>
       <button className="close" onClick={() => deleteTodo()}>
-      ×
+        ×
       </button>
     </div>
   );
