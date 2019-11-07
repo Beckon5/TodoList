@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import { useTranslation} from 'react-i18next';
 import Todo from "./components/Todo/Todo.js";
 const Main = props => {
   const [inputText, setInputText] = useState("");
@@ -8,18 +8,23 @@ const Main = props => {
 
   const [onlyActive, setOnlyActive] = useState(false);
   const [onlyInactive, setOnlyInactive] = useState(false);
-
+  const { t, i18n } = useTranslation();
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div className="todo-main">
-      <p className="todo-main__title">To do list...</p>
+       <button className="lang-btn" onClick={() => changeLanguage('ru')}>ru</button>
+        <button className="lang-btn" onClick={() => changeLanguage('en')}>en</button>
+      <p className="todo-main__title">{t('title')}...</p>
       <div className="todo-main__input-field">
         <button className="check-all" onClick={() => checkAll()}>
-          All
+          {t('all')}
         </button>
         <input
           className="input"
           type="text"
-          placeholder="What to do?"
+          placeholder={t('inputPlaceholder')}
           value={inputText}
           onChange={event => {
             setInputText(event.target.value);
@@ -51,8 +56,10 @@ const Main = props => {
             setOnlyActive(false);
             setOnlyInactive(false);
           }}
+          
         >
-          All
+          
+          {t('all')}
         </button>
         <button
           className="btn"
@@ -61,7 +68,7 @@ const Main = props => {
             setOnlyActive(true);
           }}
         >
-          Completed
+          {t('completed')}
         </button>
         <button
           className="btn"
@@ -70,7 +77,7 @@ const Main = props => {
             setOnlyInactive(true);
           }}
         >
-          In progress
+          {t('inProgress')}
         </button>
       </div>
     </div>

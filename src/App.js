@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Suspense} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addTodo, checkAll } from "./store/actions";
@@ -7,7 +7,9 @@ import Main from "./Main.jsx";
 const App = props => {
   const { toDos, addTodo, checkAll } = props;
 
-  return <Main toDos={toDos} addTodo={addTodo} checkAll={checkAll} />;
+  return <Suspense fallback="loading">
+  <Main toDos={toDos} addTodo={addTodo} checkAll={checkAll} />
+  </Suspense>
 };
 
 const mapStateToProps = state => {

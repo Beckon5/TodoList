@@ -1,0 +1,20 @@
+{
+  "en": {
+    "translation": {
+      "title": "To do list",
+      "inputPlaceholder": "What to do?",
+      "all": "All",
+      "completed": "Completed",
+      "inProgress": "In progress"
+    }
+  },
+  "ru": {
+    "translation": {
+      "title": "Список дел",
+      "inputPlaceholder": "Что будем делать?",
+      "all": "Все",
+      "completed": "Завершенные",
+      "inProgress": "В процессе"
+    }
+  }
+}
